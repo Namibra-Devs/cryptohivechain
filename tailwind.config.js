@@ -9,6 +9,8 @@ export default {
     extend: {      
       fontFamily: {
         'inter': ['Inter','sans-serif'],
+        'nunito': ['Nunito sans','sans-serif'],
+        'merriweather': ['Merriweather','serif'],
       },
 
       // Color

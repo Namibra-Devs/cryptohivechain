@@ -21,3 +21,9 @@ hamburger.addEventListener('click', () => {
     close.classList.add("hidden");
   }
 });
+
+
+// Get current year
+
+const currentYear = new Date();
+document.getElementById("year").innerHTML = currentYear.getFullYear();

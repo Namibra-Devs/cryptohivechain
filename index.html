@@ -650,17 +650,17 @@
      <footer class="footer py-16 bg-gray-900">
 
       <div class="container w-11/12 mx-auto">
-        <div class="grid grid-cols-6 gap-5 w-full">
+        <div class="flex justify-between gap-5 w-full">
           <div class="logo-about">
             <a href="/" class="logolink">
-              <div class="logo flex items-center pr-8">
+              <div class="logo flex items-center">
                 <img src="./src/images/logo.svg" alt="cryptohivechain" class="w-8 h-8">
                 <span
                   class="logoname ms-1 font-bold  border-r-2 border-slate-700 pr-4 uppercase text-logo">Cryptohivechain</span>
               </div>
             </a>
 
-            <p class="logo-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, obcaecati tempora! Eum amet repudiandae at ipsum ab minus.</p>
+            <p class="inline-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, obcaecati tempora! Eum amet repudiandae at ipsum ab minus.</p>
 
             <div class="socials">
 
@@ -668,6 +668,7 @@
 
           </div>
 
+          <div class="grid grid-cols-3 space-y-10 w-full">
             <div class="exchange">
               <h2 class="exchange-header mb-2 font-bold">Exchange</h2>
               <ul class="exchangle-list">
@@ -725,6 +726,11 @@
             </div>
           </div>
         </div>
+
+        <div class="copyright border-t border-gray-600 text-sm text-center text-gray-400 mt-10 pt-4">
+          Cryptohivechains &copy;<span id="year"></span>
+        </div>
+      </div>
      </footer>
 </body>
 

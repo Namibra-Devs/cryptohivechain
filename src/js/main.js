@@ -108,12 +108,12 @@ document.addEventListener('DOMContentLoaded', () => {
       btnShowHide.addEventListener('click', () => {
           if (passwordInput.type === 'password') {
               passwordInput.type = 'text';
-              showIcons[0]?.classList.remove('hidden');
-              hideIcons[0]?.classList.add('hidden');
-          } else {
-              passwordInput.type = 'password';
               showIcons[0]?.classList.add('hidden');
               hideIcons[0]?.classList.remove('hidden');
+          } else {
+              passwordInput.type = 'password';
+              showIcons[0]?.classList.remove('hidden');
+              hideIcons[0]?.classList.add('hidden');
           }
       });
   }
@@ -123,12 +123,12 @@ document.addEventListener('DOMContentLoaded', () => {
       btnConfirm.addEventListener('click', () => {
           if (confirmPasswordInput.type === 'password') {
               confirmPasswordInput.type = 'text';
-              showIcons[1]?.classList.remove('hidden');
-              hideIcons[1]?.classList.add('hidden');
-          } else {
-              confirmPasswordInput.type = 'password';
               showIcons[1]?.classList.add('hidden');
               hideIcons[1]?.classList.remove('hidden');
+          } else {
+              confirmPasswordInput.type = 'password';
+              showIcons[1]?.classList.remove('hidden');
+              hideIcons[1]?.classList.add('hidden');
           }
       });
   }

@@ -11,5 +11,8 @@
   "devDependencies": {
     "tailwindcss": "^3.4.17",
     "vite": "^6.0.5"
+  },
+  "dependencies": {
+    "flowbite": "^2.5.2"
   }
 }

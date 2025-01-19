@@ -13,6 +13,8 @@
     "vite": "^6.0.5"
   },
   "dependencies": {
-    "flowbite": "^2.5.2"
+    "cryptocharts": "^1.1.2",
+    "flowbite": "^2.5.2",
+    "regenerator-runtime": "^0.14.1"
   }
 }

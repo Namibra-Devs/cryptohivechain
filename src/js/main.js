@@ -1,3 +1,5 @@
+import * as CryptoCharts from "cryptocharts"
+
 document.addEventListener('DOMContentLoaded', () => {
   // Navbar
   const hamburger = document.getElementById('hamburger-button');
@@ -132,4 +134,14 @@ document.addEventListener('DOMContentLoaded', () => {
           }
       });
   }
+  
+    //   Charts
+    // CryptoCharts.priceHistory({
+    //   chart_id: "btc",
+    //   iconomi_tickers: ["BTC"],
+    //   last_days: 30,
+    //   axes: true,
+    //   loading_indicator: true
+    // });
 });
+  

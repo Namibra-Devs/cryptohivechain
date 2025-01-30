@@ -39,7 +39,7 @@
       </a>
 
       <div
-        class="navMenu lg:flex flex-col lg:flex-row justify-between lg:items-center lg:max-w-full lg:relative absolute top-12 left-0 lg:top-0 origin-top-right transform lg:opacity-100 lg:scale-100 scale-y-0 opacity-0 transition-all duration-500 ease-in-out w-full mx-auto pb-10 lg:pb-0 dark:text-slate-300 text-slate-900 bg-slate-50 dark:bg-slate-950"
+        class="navMenu lg:flex flex-col lg:flex-row justify-between lg:items-center lg:max-w-full lg:relative absolute top-12 left-0 lg:top-0 origin-top-right transform lg:opacity-100 lg:scale-100 scale-y-0 opacity-0 transition-all duration-500 ease-in-out w-full mx-auto pb-10 lg:pb-0 dark:text-slate-500 text-slate-900 bg-slate-50 dark:bg-slate-950"
         id="navmenu">
 
         <ul class="small-screen flex justify-between lg:hidden mt-10 gap-3 max-w-96 w-10/12 mx-auto">
@@ -346,9 +346,9 @@
     <div class="contaner w-11/12 lg:w-10/12 mx-auto py-6 px-3 dark:bg-slate-900 bg-slate-100 rounded-md mb-10">
 
       <!-- Market tab filter -->
-       <div class="flex justify-between items-center border-b pb-2 border-slate-300 dark:border-slate-700">
+       <div class="mx-auto w-11/12 flex justify-between items-center border-b pb-2 border-slate-300 dark:border-slate-700">
       <div class="text-sm text-center">
-        <ul class="flex flex-wrap -mb-px">
+        <ul class="flex flex-wrap gap-2 items-center -mb-px">
 
           <!-- Display only when logged in -->
             <li class="me-2">
@@ -373,20 +373,160 @@
         </ul>
     </div>
     <!-- Search box -->
-     <div class="hidden lg:flex items-center justify-between border border-gray-400 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 dark:focus:border-blue-500 dark:focus:ring-offset-2 dark:focus:ring-offset-gray-800">
+     <div class="hidden lg:flex items-center justify-between border border-gray-400 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-none focus:border-none dark:focus:border-none dark:focus:ring-offset-2 dark:focus:ring-offset-gray-800 text-slate-600 dark:text-slate-500">
       <svg class="w-8 px-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
-      <input type="text" placeholder="Search Coin Name" class="border-none outline-none focus:border-none focus:outline-none rounded-md bg-transparent px-2">
+      <input type="text" placeholder="Search Coin Name" class="border-none outline-none focus:border-none focus:outline-none focus:ring-0 rounded-md bg-transparent px-2 text-sm">
       <button type="submit" class="button-primary p-2 rounded-md">
       <svg class="w-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M0 416c0 17.7 14.3 32 32 32l54.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 448c17.7 0 32-14.3 32-32s-14.3-32-32-32l-246.7 0c-12.3-28.3-40.5-48-73.3-48s-61 19.7-73.3 48L32 384c-17.7 0-32 14.3-32 32zm128 0a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zM320 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm32-80c-32.8 0-61 19.7-73.3 48L32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l246.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48l54.7 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-54.7 0c-12.3-28.3-40.5-48-73.3-48zM192 128a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm73.3-64C253 35.7 224.8 16 192 16s-61 19.7-73.3 48L32 64C14.3 64 0 78.3 0 96s14.3 32 32 32l86.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 128c17.7 0 32-14.3 32-32s-14.3-32-32-32L265.3 64z"/></svg></button>
      </div>
   </div>
+
+  <!-- Category -->
+   <div class="category mx-auto w-11/12 text-slate-600 dark:text-slate-500 flex justify-between items-center border-b dark:border-slate-600">
+    <div class="flex gap-4 iteme mt-3">
+      <div class="category-btn">
+        <button class=" outline-none py-2 text-xs text-blue-700 border-b border-blue-700" id="category">Category</button>
+      </div>
+      <div class="algorithm-btn">
+        <button class=" outline-none py-2 text-xs" id="algorithm">Algorithm</button>
+      </div>
+      <div class="platform-btn">
+        <button class=" outline-none py-2 text-xs" id="platform">Platform</button>
+      </div>
+      <div class="industry-btn">
+        <button class=" outline-none py-2 text-xs" id="industry">Industry</button>
+      </div>
+    </div>
+
+    <div class="filter hidden md:flex gap-4 items-center">
+      <div class="dropdown">
+        <button class="show text-xs">Show 20</button>
+      </div>
+      <div class="dropdown">
+        <button class="show text-xs">Show 20</button>
+      </div>
+      <div class="dropdown">
+        <button class="show text-xs">Show 20</button>
+      </div>
+      <div class="dropdown">
+        <button class="show text-xs">Show 20</button>
+      </div>
+      <div class="dropdown">
+        <button class="show text-xs">Show 20</button>
+      </div>
+    </div>
+   </div>
+
+   <!-- Number filter -->
+    <div class="numberFilter mx-auto w-11/12 flex justify-between md:grid grid-cols-4 gap-5 border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <button class="text-xs" id="number">#</button>
+        <button class="text-xs ms-5" id="coinname">Coin Name</button>
+      </div>
+      <div class="filters grid md:grid-cols-2 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <button class="text-xs text-start" id="coinprice">Coin Price</button>
+        <button class="text-xs text-start hidden md:block" id="change">24h Change</button>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <button class="text-xs text-start" id="high">24h High</button>
+        <button class="text-xs text-start" id="low">24h Low</button>
+      </div>
+      <div class="filters hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <button class="text-xs" id="pricechart">Chart</button>
+      </div>
+  </div>
     
+   <!-- Coins details -->
+    <div class="coins_info mx-auto w-11/12">
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">1</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/bitcoin.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Bitcoin <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">BTC</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold text-start" id="coinprice">$<span>104,5904</span></p>
+        <p class="text-xs hidden md:block text-green-600" id="change">+0.56%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>109,5904</span></p>
+        <p class="text-xs font-bold" id="low">$<span>99,004</span></p>
+      </div>
+      <div class="filters  w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">2</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/ethereum.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Ethereum <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">ETH</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 justify-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="coinprice">$<span>3,804</span></p>
+        <p class="text-xs hidden md:block text-green-600" id="change">+0.41%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>4,304</span></p>
+        <p class="text-xs font-bold" id="low">$<span>3,104</span></p>
+      </div>
+      <div class="filters  w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">3</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/xrp.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Ripple <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">XRP</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold w-full text-start" id="coinprice">$<span>2.34</span></p>
+        <p class="text-xs hidden md:block text-red-600" id="change"> -0.03%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>2.86</span></p>
+        <p class="text-xs font-bold" id="low">$<span>2.03</span></p>
+      </div>
+      <div class="filters  w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">4</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/binance.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Binance <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">BNB</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="coinprice">$<span>308.04</span></p>
+        <p class="text-xs hidden md:block text-red-600" id="change"> -0.43%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>369.02</span></p>
+        <p class="text-xs font-bold" id="low">$<span>304.08</span></p>
+      </div>
+      <div class="filters w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Buy/Sell BTN -->
+
+  <div class="buysell_btn">
+    button
+  </div>
     </div>
   </section>
 
 
   <!-- Footer -->
-  <footer class="footer dark:bg-gray-900 bg-slate-100">
+  <footer class="footer dark:bg-gray-900 bg-slate-100 text-slate-700 dark:text-slate-500">
 
     <div class="container max-w-[94%] md:w-11/12 pt-16 pb-4 mx-auto text-lg font-inter">
       <div class="flex justify-between flex-col lg:flex-row space-y-10 lg:space-y-0 gap-10 items-start w-full">
@@ -433,15 +573,15 @@
 
 
 
-        <div class="flex flex-wrap gap-10 w-full">
+        <div class="flex flex-wrap gap-10 w-full text-slate-700 dark:text-slate-500">
           <div class="exchange">
             <h2 class="exchange-header mb-2 font-bold">Exchange</h2>
             <ul class="exchangle-list">
     
-              <li class="exchange-item"><a href="" class="exchange-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">Exchange Home</a></li>
-              <li class="exchange-item"><a href="" class="exchange-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">Margin Trading</a></li>
-              <li class="exchange-item"><a href="" class="exchange-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">Derivatives Trading</a></li>
-              <li class="exchange-item"><a href="" class="exchange-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">Supercharger</a></li>
+              <li class="exchange-item"><a href="" class="exchange-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">Exchange Home</a></li>
+              <li class="exchange-item"><a href="" class="exchange-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">Margin Trading</a></li>
+              <li class="exchange-item"><a href="" class="exchange-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">Derivatives Trading</a></li>
+              <li class="exchange-item"><a href="" class="exchange-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">Supercharger</a></li>
              
             </ul>
           </div>
@@ -449,23 +589,23 @@
             <h2 class="support-header mb-2 font-bold">Support</h2>
             <ul class="exchangle-list">
     
-              <li class="support-item"><a href="" class="support-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">Exchange Home</a></li>
-              <li class="support-item"><a href="" class="support-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">Request Form</a></li>
-              <li class="support-item"><a href="" class="support-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">Contact Support</a></li>
-              <li class="support-item"><a href="" class="support-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">FAQ</a></li>
-              <li class="support-item"><a href="" class="support-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">Security</a></li>
+              <li class="support-item"><a href="" class="support-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">Exchange Home</a></li>
+              <li class="support-item"><a href="" class="support-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">Request Form</a></li>
+              <li class="support-item"><a href="" class="support-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">Contact Support</a></li>
+              <li class="support-item"><a href="" class="support-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">FAQ</a></li>
+              <li class="support-item"><a href="" class="support-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">Security</a></li>
             </ul>
           </div>
           <div class="service">
             <h2 class="service-header mb-2 font-bold">Service</h2>
             <ul class="service-list">
     
-              <li class="service-item"><a href="" class="service-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">Buy Crypto</a></li>
-              <li class="service-item"><a href="" class="service-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">Listing Trading</a></li>
-              <li class="service-item"><a href="" class="service-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">Referral</a></li>
-              <li class="service-item"><a href="" class="service-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">Affiliate</a></li>
-              <li class="service-item"><a href="" class="service-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">Historical Market</a></li>
-              <li class="service-item"><a href="" class="service-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">Reserves Proof</a></li>
+              <li class="service-item"><a href="" class="service-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">Buy Crypto</a></li>
+              <li class="service-item"><a href="" class="service-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">Listing Trading</a></li>
+              <li class="service-item"><a href="" class="service-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">Referral</a></li>
+              <li class="service-item"><a href="" class="service-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">Affiliate</a></li>
+              <li class="service-item"><a href="" class="service-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">Historical Market</a></li>
+              <li class="service-item"><a href="" class="service-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">Reserves Proof</a></li>
              
             </ul>
           </div>
@@ -473,13 +613,13 @@
             <h2 class="learn-header mb-2 font-bold">Learn</h2>
             <ul class="learn-list">
     
-              <li class="learn-item"><a href="" class="learn-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">Learn & Earn</a></li>
-              <li class="learn-item"><a href="" class="learn-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">Market Trends</a></li>
-              <li class="learn-item"><a href="" class="learn-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">University</a></li>
-              <li class="learn-item"><a href="" class="learn-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">Research</a></li>
-              <li class="learn-item"><a href="" class="learn-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">Events</a></li>
+              <li class="learn-item"><a href="" class="learn-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">Learn & Earn</a></li>
+              <li class="learn-item"><a href="" class="learn-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">Market Trends</a></li>
+              <li class="learn-item"><a href="" class="learn-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">University</a></li>
+              <li class="learn-item"><a href="" class="learn-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">Research</a></li>
+              <li class="learn-item"><a href="" class="learn-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">Events</a></li>
              
-              <li class="learn-item"><a href="" class="learn-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">Crypto 101</a></li>
+              <li class="learn-item"><a href="" class="learn-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">Crypto 101</a></li>
              
             </ul>
           </div>
@@ -487,19 +627,19 @@
             <h2 class="company-header mb-2 font-bold">Company</h2>
             <ul class="company-list">
     
-              <li class="company-item"><a href="" class="company-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">About Us</a></li>
-              <li class="company-item"><a href="" class="company-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">Careers</a></li>
-              <li class="company-item"><a href="" class="company-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">Announcements</a></li>
-              <li class="company-item"><a href="" class="company-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">Community</a></li>
-              <li class="company-item"><a href="" class="company-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">Legal</a></li>
+              <li class="company-item"><a href="" class="company-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">About Us</a></li>
+              <li class="company-item"><a href="" class="company-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">Careers</a></li>
+              <li class="company-item"><a href="" class="company-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">Announcements</a></li>
+              <li class="company-item"><a href="" class="company-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">Community</a></li>
+              <li class="company-item"><a href="" class="company-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">Legal</a></li>
               
-              <li class="company-item"><a href="" class="company-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">Blog</a></li>
+              <li class="company-item"><a href="" class="company-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">Blog</a></li>
 
-              <li class="company-item"><a href="" class="company-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">Press</a></li>
+              <li class="company-item"><a href="" class="company-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">Press</a></li>
               
-              <li class="company-item"><a href="" class="company-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">News</a></li>
+              <li class="company-item"><a href="" class="company-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">News</a></li>
               
-              <li class="company-item"><a href="" class="company-link text-sm hover:underline hover:text-blue-600 dark:text-slate-300">Risk Warning</a></li>
+              <li class="company-item"><a href="" class="company-link text-sm hover:underline hover:text-blue-600 dark:hover:text-blue-600 dark:text-slate-500">Risk Warning</a></li>
               
             </ul>
           </div>

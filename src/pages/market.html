@@ -21,14 +21,13 @@
 
 
 
-  <title>Cryptohivechain</title>
+  <title>Market | Cryptohivechain</title>
 </head>
 
 <body class="dark:text-gray-50 dark:bg-gray-950 text-slate-900 font-inter">
 
-  <!-- Navigation Bar -->
-  <div
-    class="navigation-menu fixed top-0 w-full dark:bg-gray-950 lg:border-b-2 dark:border-slate-800 bg-gray-50 text-slate-900">
+   <!-- Navigation Bar -->
+   <div class="navigation-menu fixed top-0 z-50 w-full dark:bg-gray-950 lg:border-b-2 dark:border-slate-800 bg-gray-50 text-slate-900">
     <nav class="navmenu md:w-10/12 w-11/12 mx-auto flex justify-between lg:items-center py-4">
       <a href="/" class="logolink">
         <div class="logo flex items-center pr-8">
@@ -39,23 +38,95 @@
       </a>
 
       <div
-        class="navMenu lg:flex flex-col lg:flex-row justify-between lg:items-center lg:max-w-full lg:relative absolute top-12 left-0 lg:top-0 origin-top-right transform lg:opacity-100 lg:scale-100 scale-y-0 opacity-0 transition-all duration-500 ease-in-out w-full mx-auto pb-10 lg:pb-0 dark:text-slate-500 text-slate-900 bg-slate-50 dark:bg-slate-950"
-        id="navmenu">
+        class="navMenu lg:flex flex-col lg:flex-row justify-between lg:items-center lg:max-w-full lg:relative absolute top-12 w-full left-0 lg:top-0 origin-top-right transform lg:opacity-100 lg:scale-100 scale-y-0 opacity-0 transition-all duration-500 ease-in-out pb-10 lg:pb-0 dark:text-slate-300 text-slate-900 bg-slate-50 dark:bg-slate-950" id="navmenu">
 
-        <ul class="small-screen flex justify-between lg:hidden mt-10 gap-3 max-w-96 w-10/12 mx-auto">
-          <li class="signin w-full">
+        <!-- Only show for guests/when user is not logged in -->
+         <div class="mt-5 -mb-4 block lg:hidden">
+          <button
+          id="dropdownSmallButton"
+          data-dropdown-toggle="dropdownSmall"
+          class="navlink w-full flex justify-between items-center space-x-1 text-sm font-medium bg-slate-200 dark:bg-slate-900 text-slate-700 dark:text-slate-500 px-4 py-2"
+          type="button"
+        >
+          
+        <div class="navList flex items-center w-full">
+          <img src="/src/images/profiles/john-doe.jpg" alt="" class="profile-img object-contain w-10 h-10 rounded-full block mr-2">
+          <div class="name">
+            <span class="fullname block">John Doe</span>
+            <span class="username block text-xs">@john-doe</span>
+          </div>
+        </div>
+        <svg class="w-3 h-3 inline" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+        </button>
+    
+        <!-- Dropdown menu -->
+        <div
+          id="dropdownSmall"
+          class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600"
+        >
+          <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+            <div>John Doe</div>
+            <div class="font-medium truncate">@johndoe</div>
+          </div>
+          <ul
+            class="py-2 text-sm text-gray-700 dark:text-gray-200"
+            aria-labelledby="dropdownSmallButton"
+          >
+            <li>
+              <a
+                href="#"
+                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >Profile</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >Wallet</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >Settings</a
+              >
+            </li>
+          </ul>
+          <div class="py-2">
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+              >Sign out</a
+            >
+          </div>
+        </div>
+           <!-- <a href="/src/pages/profile.html" class="navlink flex justify-between items-center space-x-1 text-sm font-medium bg-slate-200 dark:bg-slate-900 text-slate-700 dark:text-slate-500 px-4 py-2 rounded-md"> -->
+          <!-- <div class="navList flex items-center w-full">
+            <img src="/src/images/profiles/john-doe.jpg" alt="" class="profile-img object-contain w-10 h-10 rounded-full block mr-2">
+            <div class="name">
+              <span class="fullname block">John Doe</span>
+              <span class="username block text-xs">@john-doe</span>
+            </div>
+          </div>
+          <svg class="w-3 h-3 inline" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg> -->
+        <!-- </a> -->
+          <ul class="small-screen flex justify-between lg:hidden gap-3 max-w-96 w-10/12 mx-auto">
+          
+          <li class="signin w-full hidden">
             <a href="/src/pages/signin.html"
               class="button text-sm font-medium dark:bg-gray-800 bg-slate-300 dark:hover:bg-gray-700 hover:bg-slate-400 px-6 py-2 text-center w-full block rounded-md transition-all ease-in-out duration-300">Sign
               In</a>
           </li>
-          <li class="register w-full">
+          <li class="register w-full hidden">
             <a href="/src/pages/register.html"
               class="button text-sm font-medium dark:text-gray-950 text-slate-300 bg-blue-700 hover:bg-blue-600 px-6 py-2 text-center w-full block rounded-md transition-all ease-in-out duration-300">Register</a>
           </li>
         </ul>
-
+      </div>
         <ul
-          class="navMenuList flex flex-col lg:flex-row lg:justify-end lg:items-center gap-5 mt-12 mb-5 lg:mt-0 lg:mb-0 w-10/12 mx-auto">
+          class="navMenuList flex flex-col lg:flex-row lg:justify-end lg:items-center gap-5 mt-12 mb-5 lg:w-10/12 w-11/12 mx-auto lg:mt-0 lg:mb-0">
           <li class="navList"><a href="/src/pages/market.html"
               class="navlink text-sm font-medium hover:border-b-2 border-blue-600 lg:py-6 py-1 dark:hover:text-blue-500 hover:text-blue-700 transition-all ease-in-out duration-300">
               <svg class="w-4 h-4 inline lg:hidden mr-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +134,9 @@
                 <path
                   d="M160 80c0-26.5 21.5-48 48-48l32 0c26.5 0 48 21.5 48 48l0 352c0 26.5-21.5 48-48 48l-32 0c-26.5 0-48-21.5-48-48l0-352zM0 272c0-26.5 21.5-48 48-48l32 0c26.5 0 48 21.5 48 48l0 160c0 26.5-21.5 48-48 48l-32 0c-26.5 0-48-21.5-48-48L0 272zM368 96l32 0c26.5 0 48 21.5 48 48l0 288c0 26.5-21.5 48-48 48l-32 0c-26.5 0-48-21.5-48-48l0-288c0-26.5 21.5-48 48-48z" />
               </svg>
-              Market</a></li>
+              Market
+              <svg class="w-3 h-3 inline float-end lg:hidden" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+            </a></li>
           <li class="navList"><a href="/src/pages/watchlist.html"
               class="navlink text-sm font-medium hover:border-b-2 border-blue-600 lg:py-6 py-1 dark:hover:text-blue-500 hover:text-blue-700 transition-all ease-in-out duration-300">
               <svg class="w-4 h-4 inline lg:hidden mr-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +144,9 @@
                 <path
                   d="M118.6 80c-11.5 0-21.4 7.9-24 19.1L57 260.3c20.5-6.2 48.3-12.3 78.7-12.3c32.3 0 61.8 6.9 82.8 13.5c10.6 3.3 19.3 6.7 25.4 9.2c3.1 1.3 5.5 2.4 7.3 3.2c.9 .4 1.6 .7 2.1 1l.6 .3 .2 .1c0 0 .1 0 .1 0c0 0 0 0 0 0s0 0 0 0L247.9 288s0 0 0 0l6.3-12.7c5.8 2.9 10.4 7.3 13.5 12.7l40.6 0c3.1-5.3 7.7-9.8 13.5-12.7l6.3 12.7s0 0 0 0c-6.3-12.7-6.3-12.7-6.3-12.7s0 0 0 0s0 0 0 0c0 0 .1 0 .1 0l.2-.1 .6-.3c.5-.2 1.2-.6 2.1-1c1.8-.8 4.2-1.9 7.3-3.2c6.1-2.6 14.8-5.9 25.4-9.2c21-6.6 50.4-13.5 82.8-13.5c30.4 0 58.2 6.1 78.7 12.3L481.4 99.1c-2.6-11.2-12.6-19.1-24-19.1c-3.1 0-6.2 .6-9.2 1.8L416.9 94.3c-12.3 4.9-26.3-1.1-31.2-13.4s1.1-26.3 13.4-31.2l31.3-12.5c8.6-3.4 17.7-5.2 27-5.2c33.8 0 63.1 23.3 70.8 56.2l43.9 188c1.7 7.3 2.9 14.7 3.5 22.1c.3 1.9 .5 3.8 .5 5.7l0 6.7 0 41.3 0 16c0 61.9-50.1 112-112 112l-44.3 0c-59.4 0-108.5-46.4-111.8-105.8L306.6 352l-37.2 0-1.2 22.2C264.9 433.6 215.8 480 156.3 480L112 480C50.1 480 0 429.9 0 368l0-16 0-41.3L0 304c0-1.9 .2-3.8 .5-5.7c.6-7.4 1.8-14.8 3.5-22.1l43.9-188C55.5 55.3 84.8 32 118.6 32c9.2 0 18.4 1.8 27 5.2l31.3 12.5c12.3 4.9 18.3 18.9 13.4 31.2s-18.9 18.3-31.2 13.4L127.8 81.8c-2.9-1.2-6-1.8-9.2-1.8zM64 325.4L64 368c0 26.5 21.5 48 48 48l44.3 0c25.5 0 46.5-19.9 47.9-45.3l2.5-45.6c-2.3-.8-4.9-1.7-7.5-2.5c-17.2-5.4-39.9-10.5-63.6-10.5c-23.7 0-46.2 5.1-63.2 10.5c-3.1 1-5.9 1.9-8.5 2.9zM512 368l0-42.6c-2.6-.9-5.5-1.9-8.5-2.9c-17-5.4-39.5-10.5-63.2-10.5c-23.7 0-46.4 5.1-63.6 10.5c-2.7 .8-5.2 1.7-7.5 2.5l2.5 45.6c1.4 25.4 22.5 45.3 47.9 45.3l44.3 0c26.5 0 48-21.5 48-48z" />
               </svg>
-              Watchlist</a></li>
+              Watchlist
+              <svg class="w-3 h-3 inline float-end lg:hidden" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+            </a></li>
           <li class="navList"><a href="/src/pages/portfolio.html"
               class="navlink text-sm font-medium hover:border-b-2 border-blue-600 lg:py-6 py-1 dark:hover:text-blue-500 hover:text-blue-700 transition-all ease-in-out duration-300">
               <svg class="w-4 h-4 inline lg:hidden mr-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +154,9 @@
                 <path
                   d="M184 48l144 0c4.4 0 8 3.6 8 8l0 40L176 96l0-40c0-4.4 3.6-8 8-8zm-56 8l0 40L64 96C28.7 96 0 124.7 0 160l0 96 192 0 128 0 192 0 0-96c0-35.3-28.7-64-64-64l-64 0 0-40c0-30.9-25.1-56-56-56L184 0c-30.9 0-56 25.1-56 56zM512 288l-192 0 0 32c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32-14.3-32-32l0-32L0 288 0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-128z" />
               </svg>
-              Portfolio</a></li>
+              Portfolio
+              <svg class="w-3 h-3 inline float-end lg:hidden" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+            </a></li>
           <li class="navList"><a href="/src/pages/learn.html"
               class="navlink text-sm font-medium hover:border-b-2 border-blue-600 lg:py-6 py-1 dark:hover:text-blue-500 hover:text-blue-700 transition-all ease-in-out duration-300">
               <svg class="w-4 h-4 inline lg:hidden mr-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
@@ -87,18 +164,22 @@
                 <path
                   d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9l0 28.1c0 28.4-10.8 57.7-22.3 80.8c-6.5 13-13.9 25.8-22.5 37.6C0 442.7-.9 448.3 .9 453.4s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7 .3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7C90.3 344.3 86 329.8 80 316.5l0-24.6c0-30.2 10.2-58.7 27.9-81.5c12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5 .8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1L624.2 182.6c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1C336.1 33.4 328.1 32 320 32zM128 408c0 35.3 86 72 192 72s192-36.7 192-72L496.7 262.6 354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6L143.3 262.6 128 408z" />
               </svg>
-              Learn</a></li>
+              Learn
+              <svg class="w-3 h-3 inline float-end lg:hidden" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+            </a></li>
         </ul>
 
-        <ul class="navMenuList flex flex-col lg:flex-row lg:justify-end lg:items-center lg:gap-5 gap-2 w-10/12 mx-auto">
-          <li class="navList lg:border-r-2 border-slate-700 pr-4"><a href=""
+        <ul class="navMenuList flex flex-col lg:flex-row lg:justify-end lg:items-center gap-2 lg:w-full w-11/12 mx-auto">
+          <li class="navList lg:border-r-2 border-slate-700 lg:pr-2"><a href=""
               class="navlink text-sm font-medium hover:border-b-2 border-blue-600 lg:py-6 py-1 dark:hover:text-blue-500 hover:text-blue-700 transition-all ease-in-out duration-300 text-slate-600">
               <svg class="w-4 h-4 inline mr-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 640 512">
                 <path
                   d="M0 128C0 92.7 28.7 64 64 64l192 0 48 0 16 0 256 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64l-256 0-16 0-48 0L64 448c-35.3 0-64-28.7-64-64L0 128zm320 0l0 256 256 0 0-256-256 0zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1 73.6 0 8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276l-38 0 19-42.8zM448 164c11 0 20 9 20 20l0 4 44 0 16 0c11 0 20 9 20 20s-9 20-20 20l-2 0-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45L448 228l-72 0c-11 0-20-9-20-20s9-20 20-20l52 0 0-4c0-11 9-20 20-20z" />
               </svg>
-              English</a></li>
+              English
+              <svg class="w-3 h-3 inline float-end lg:hidden" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+            </a></li>
           <li class="navList"><a href=""
               class="navlink text-sm font-medium hover:border-b-2 border-blue-600 lg:py-6 py-1 dark:hover:text-blue-500 hover:text-blue-700 transition-all ease-in-out duration-300 text-slate-600">
               <svg class="w-4 h-4 inline  mr-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
@@ -106,13 +187,96 @@
                 <path
                   d="M64 64C28.7 64 0 92.7 0 128L0 384c0 35.3 28.7 64 64 64l448 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64L64 64zM272 192l224 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-224 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zM256 304c0-8.8 7.2-16 16-16l224 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-224 0c-8.8 0-16-7.2-16-16zM164 152l0 13.9c7.5 1.2 14.6 2.9 21.1 4.7c10.7 2.8 17 13.8 14.2 24.5s-13.8 17-24.5 14.2c-11-2.9-21.6-5-31.2-5.2c-7.9-.1-16 1.8-21.5 5c-4.8 2.8-6.2 5.6-6.2 9.3c0 1.8 .1 3.5 5.3 6.7c6.3 3.8 15.5 6.7 28.3 10.5l.7 .2c11.2 3.4 25.6 7.7 37.1 15c12.9 8.1 24.3 21.3 24.6 41.6c.3 20.9-10.5 36.1-24.8 45c-7.2 4.5-15.2 7.3-23.2 9l0 13.8c0 11-9 20-20 20s-20-9-20-20l0-14.6c-10.3-2.2-20-5.5-28.2-8.4c0 0 0 0 0 0s0 0 0 0c-2.1-.7-4.1-1.4-6.1-2.1c-10.5-3.5-16.1-14.8-12.6-25.3s14.8-16.1 25.3-12.6c2.5 .8 4.9 1.7 7.2 2.4c13.6 4.6 24 8.1 35.1 8.5c8.6 .3 16.5-1.6 21.4-4.7c4.1-2.5 6-5.5 5.9-10.5c0-2.9-.8-5-5.9-8.2c-6.3-4-15.4-6.9-28-10.7l-1.7-.5c-10.9-3.3-24.6-7.4-35.6-14c-12.7-7.7-24.6-20.5-24.7-40.7c-.1-21.1 11.8-35.7 25.8-43.9c6.9-4.1 14.5-6.8 22.2-8.5l0-14c0-11 9-20 20-20s20 9 20 20z" />
               </svg>
-              USD</a></li>
+              USD
+              <svg class="w-3 h-3 inline float-end lg:hidden" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+            </a>
+          </li>
+            <!-- Only show when user is not logged in -->
+             <div class="loggedOut hidden">
           <li class="navList lg:inline hidden"><a href="/src/pages/signin.html"
               class="navlink text-sm font-medium hover:border-b-2 border-blue-600 lg:py-6 py-1 dark:hover:text-blue-500 hover:text-blue-700 transition-all ease-in-out duration-300 text-blue-700">Sign
               In</a></li>
           <li class="navList lg:block hidden"><a href="/src/pages/register.html"
               class="navlink  text-sm font-medium dark:text-gray-900 text-slate-100 hover:bg-blue-600 bg-blue-700 px-4 py-2 rounded-md">Register</a>
           </li>
+        </div>
+
+        <!-- User Logged In view -->
+        <div class="loggenIn lg:flex hidden gap-3 ms-3">
+          <!-- <li class="navList "><a href="/src/pages/signin.html"
+            class="navlink text-sm font-medium bg-slate-200 text-slate-700 dark:bg-slate-900 dark:text-slate-500 px-4 py-2 rounded-md transition-all ease-in-out duration-300 ">
+            <svg class="w-3 h-3 inline" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9L0 168c0 13.3 10.7 24 24 24l110.1 0c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24l0 104c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65 0-94.1c0-13.3-10.7-24-24-24z"/></svg>
+            History</a>
+          </li> -->
+        <!-- <li class="navList "><a href="/src/pages/register.html"
+            class="navlink  text-sm font-medium bg-slate-200 dark:bg-slate-900 text-slate-700 dark:text-slate-500 px-4 py-2 rounded-md">Wallet</a>
+        </li> -->
+
+        <li class="navList">          
+          <button
+          id="dropdownSmallButton"
+          data-dropdown-toggle="dropdownSmall"
+          class="navlink w-full flex justify-between items-center space-x-1 text-sm font-medium text-slate-700 dark:text-slate-500 px-4 rounded-md"
+          type="button"
+        >
+          
+        <div class="navList flex items-center w-full">
+          <img src="/src/images/profiles/john-doe.jpg" alt="" class="profile-img object-contain w-8 h-8 rounded-full block mr-2">
+          <div class="name">
+            <span class="fullname block">John Doe</span>
+            <!-- <span class="username block text-xs">@john-doe</span> -->
+          </div>
+        </div>
+        <svg class="w-5 h-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
+        </button>
+    
+        <!-- Dropdown menu -->
+        <div
+          id="dropdownSmall"
+          class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600"
+        >
+          <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+            <div>John Doe</div>
+            <div class="font-medium truncate">@johndoe</div>
+          </div>
+          <ul
+            class="py-2 text-sm text-gray-700 dark:text-gray-200"
+            aria-labelledby="dropdownSmallButton"
+          >
+            <li>
+              <a
+                href="#"
+                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >Profile</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >Wallet</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >Settings</a
+              >
+            </li>
+          </ul>
+          <div class="py-2">
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+              >Sign out</a
+            >
+          </div>
+        </div>
+        </li>
+
+        
+        </div>
         </ul>
       </div>
 
@@ -514,12 +678,487 @@
         <p class="text-xs" id="pricechart">Chart</p>
       </div>
     </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">4</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/binance.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Binance <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">BNB</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="coinprice">$<span>308.04</span></p>
+        <p class="text-xs hidden md:block text-red-600" id="change"> -0.43%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>369.02</span></p>
+        <p class="text-xs font-bold" id="low">$<span>304.08</span></p>
+      </div>
+      <div class="filters w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">4</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/binance.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Binance <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">BNB</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="coinprice">$<span>308.04</span></p>
+        <p class="text-xs hidden md:block text-red-600" id="change"> -0.43%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>369.02</span></p>
+        <p class="text-xs font-bold" id="low">$<span>304.08</span></p>
+      </div>
+      <div class="filters w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">4</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/binance.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Binance <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">BNB</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="coinprice">$<span>308.04</span></p>
+        <p class="text-xs hidden md:block text-red-600" id="change"> -0.43%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>369.02</span></p>
+        <p class="text-xs font-bold" id="low">$<span>304.08</span></p>
+      </div>
+      <div class="filters w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">4</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/binance.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Binance <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">BNB</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="coinprice">$<span>308.04</span></p>
+        <p class="text-xs hidden md:block text-red-600" id="change"> -0.43%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>369.02</span></p>
+        <p class="text-xs font-bold" id="low">$<span>304.08</span></p>
+      </div>
+      <div class="filters w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">4</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/binance.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Binance <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">BNB</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="coinprice">$<span>308.04</span></p>
+        <p class="text-xs hidden md:block text-red-600" id="change"> -0.43%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>369.02</span></p>
+        <p class="text-xs font-bold" id="low">$<span>304.08</span></p>
+      </div>
+      <div class="filters w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">4</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/binance.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Binance <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">BNB</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="coinprice">$<span>308.04</span></p>
+        <p class="text-xs hidden md:block text-red-600" id="change"> -0.43%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>369.02</span></p>
+        <p class="text-xs font-bold" id="low">$<span>304.08</span></p>
+      </div>
+      <div class="filters w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">4</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/binance.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Binance <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">BNB</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="coinprice">$<span>308.04</span></p>
+        <p class="text-xs hidden md:block text-red-600" id="change"> -0.43%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>369.02</span></p>
+        <p class="text-xs font-bold" id="low">$<span>304.08</span></p>
+      </div>
+      <div class="filters w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">4</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/binance.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Binance <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">BNB</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="coinprice">$<span>308.04</span></p>
+        <p class="text-xs hidden md:block text-red-600" id="change"> -0.43%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>369.02</span></p>
+        <p class="text-xs font-bold" id="low">$<span>304.08</span></p>
+      </div>
+      <div class="filters w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">4</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/binance.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Binance <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">BNB</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="coinprice">$<span>308.04</span></p>
+        <p class="text-xs hidden md:block text-red-600" id="change"> -0.43%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>369.02</span></p>
+        <p class="text-xs font-bold" id="low">$<span>304.08</span></p>
+      </div>
+      <div class="filters w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">4</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/binance.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Binance <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">BNB</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="coinprice">$<span>308.04</span></p>
+        <p class="text-xs hidden md:block text-red-600" id="change"> -0.43%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>369.02</span></p>
+        <p class="text-xs font-bold" id="low">$<span>304.08</span></p>
+      </div>
+      <div class="filters w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">4</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/binance.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Binance <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">BNB</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="coinprice">$<span>308.04</span></p>
+        <p class="text-xs hidden md:block text-red-600" id="change"> -0.43%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>369.02</span></p>
+        <p class="text-xs font-bold" id="low">$<span>304.08</span></p>
+      </div>
+      <div class="filters w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">4</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/binance.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Binance <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">BNB</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="coinprice">$<span>308.04</span></p>
+        <p class="text-xs hidden md:block text-red-600" id="change"> -0.43%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>369.02</span></p>
+        <p class="text-xs font-bold" id="low">$<span>304.08</span></p>
+      </div>
+      <div class="filters w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">4</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/binance.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Binance <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">BNB</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="coinprice">$<span>308.04</span></p>
+        <p class="text-xs hidden md:block text-red-600" id="change"> -0.43%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>369.02</span></p>
+        <p class="text-xs font-bold" id="low">$<span>304.08</span></p>
+      </div>
+      <div class="filters w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">4</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/binance.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Binance <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">BNB</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="coinprice">$<span>308.04</span></p>
+        <p class="text-xs hidden md:block text-red-600" id="change"> -0.43%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>369.02</span></p>
+        <p class="text-xs font-bold" id="low">$<span>304.08</span></p>
+      </div>
+      <div class="filters w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">4</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/binance.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Binance <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">BNB</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="coinprice">$<span>308.04</span></p>
+        <p class="text-xs hidden md:block text-red-600" id="change"> -0.43%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>369.02</span></p>
+        <p class="text-xs font-bold" id="low">$<span>304.08</span></p>
+      </div>
+      <div class="filters w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">4</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/binance.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Binance <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">BNB</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="coinprice">$<span>308.04</span></p>
+        <p class="text-xs hidden md:block text-red-600" id="change"> -0.43%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>369.02</span></p>
+        <p class="text-xs font-bold" id="low">$<span>304.08</span></p>
+      </div>
+      <div class="filters w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">4</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/binance.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Binance <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">BNB</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="coinprice">$<span>308.04</span></p>
+        <p class="text-xs hidden md:block text-red-600" id="change"> -0.43%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>369.02</span></p>
+        <p class="text-xs font-bold" id="low">$<span>304.08</span></p>
+      </div>
+      <div class="filters w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">4</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/binance.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Binance <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">BNB</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="coinprice">$<span>308.04</span></p>
+        <p class="text-xs hidden md:block text-red-600" id="change"> -0.43%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>369.02</span></p>
+        <p class="text-xs font-bold" id="low">$<span>304.08</span></p>
+      </div>
+      <div class="filters w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">4</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/binance.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Binance <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">BNB</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="coinprice">$<span>308.04</span></p>
+        <p class="text-xs hidden md:block text-red-600" id="change"> -0.43%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>369.02</span></p>
+        <p class="text-xs font-bold" id="low">$<span>304.08</span></p>
+      </div>
+      <div class="filters w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">4</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/binance.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Binance <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">BNB</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="coinprice">$<span>308.04</span></p>
+        <p class="text-xs hidden md:block text-red-600" id="change"> -0.43%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>369.02</span></p>
+        <p class="text-xs font-bold" id="low">$<span>304.08</span></p>
+      </div>
+      <div class="filters w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">4</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/binance.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Binance <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">BNB</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="coinprice">$<span>308.04</span></p>
+        <p class="text-xs hidden md:block text-red-600" id="change"> -0.43%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>369.02</span></p>
+        <p class="text-xs font-bold" id="low">$<span>304.08</span></p>
+      </div>
+      <div class="filters w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">4</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/binance.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Binance <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">BNB</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="coinprice">$<span>308.04</span></p>
+        <p class="text-xs hidden md:block text-red-600" id="change"> -0.43%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>369.02</span></p>
+        <p class="text-xs font-bold" id="low">$<span>304.08</span></p>
+      </div>
+      <div class="filters w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">4</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/binance.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Binance <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">BNB</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="coinprice">$<span>308.04</span></p>
+        <p class="text-xs hidden md:block text-red-600" id="change"> -0.43%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>369.02</span></p>
+        <p class="text-xs font-bold" id="low">$<span>304.08</span></p>
+      </div>
+      <div class="filters w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">4</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/binance.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Binance <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">BNB</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="coinprice">$<span>308.04</span></p>
+        <p class="text-xs hidden md:block text-red-600" id="change"> -0.43%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>369.02</span></p>
+        <p class="text-xs font-bold" id="low">$<span>304.08</span></p>
+      </div>
+      <div class="filters w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+    <div class="coin_info flex justify-between md:grid grid-cols-4 gap-5 w-full border-b dark:border-slate-600 mt-3">
+      <div class="filters flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="number"># <span class="font-medium">4</span></p>
+        <p class="text-sm" id="coinname">
+          <img src="/src/images/coinlogos/binance.svg" alt="bitcoin" class="w-4 inline-block mr-1">
+          Binance <span class="ms-1 text-[0.5rem] text-blue-700 py-1 px-2 rounded-sm bg-slate-300 dark:bg-slate-950">BNB</span></p>
+      </div>
+      <div class="filters grid md:grid-cols-2 grid-cols-1 gap-1 text-start py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="coinprice">$<span>308.04</span></p>
+        <p class="text-xs hidden md:block text-red-600" id="change"> -0.43%</p>
+      </div>
+      <div class="filters hidden md:grid grid-cols-2 gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs font-bold" id="high">$<span>369.02</span></p>
+        <p class="text-xs font-bold" id="low">$<span>304.08</span></p>
+      </div>
+      <div class="filters w-full hidden md:flex gap-5 py-2 text-slate-600 dark:text-slate-500">
+        <p class="text-xs" id="pricechart">Chart</p>
+      </div>
+    </div>
+      <!-- Buy/Sell BTN -->
+  <div class="buysell_btn w-full mx-auto mt-10">
+    <button class="sticky w-full md:w-40 md:left-full bottom-0 bg-blue-700 hover:bg-blue-600 transition-all duration-300 ease-in-out text-sm text-white px-8 py-2 rounded-md shadow-lg z-10">
+      Buy/Sell
+    </button>
   </div>
-
-  <!-- Buy/Sell BTN -->
-
-  <div class="buysell_btn">
-    button
   </div>
     </div>
   </section>

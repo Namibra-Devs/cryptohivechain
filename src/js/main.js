@@ -1,5 +1,3 @@
-// import * as CryptoCharts from "cryptocharts";
-
 document.addEventListener("DOMContentLoaded", () => {
   // Dark mode - Light mode
   const themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
@@ -67,6 +65,29 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Dropdown menu
+  const dropdownButton = document.getElementById('dropdownButton');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        // Toggle Menu
+        dropdownButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            dropdownMenu.classList.toggle('hidden');
+        });
+
+        // Close Menu When Clicking Outside
+        document.addEventListener('click', (e) => {
+            if (!dropdownButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                dropdownMenu.classList.add('hidden');
+            }
+        });
+
+        // Optional: Close Menu on Item Click
+        document.querySelectorAll('#dropdownMenu a').forEach(item => {
+            item.addEventListener('click', () => {
+                dropdownMenu.classList.add('hidden');
+            });
+        });
   // Form Elements
   const form = document.getElementById("register-form");
   const submitButton = document.getElementById("submit-button");
@@ -139,7 +160,6 @@ document.addEventListener("DOMContentLoaded", () => {
     yearElement.textContent = currentYear;
   }
 });
-
 document.addEventListener("DOMContentLoaded", () => {
   // Password and Confirm Password Fields (Works for both pages)
   const passwordInput = document.getElementById("password");
@@ -179,15 +199,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-
-  //   Charts
-  // CryptoCharts.priceHistory({
-  //   chart_id: "btc",
-  //   iconomi_tickers: ["BTC"],
-  //   last_days: 30,
-  //   axes: true,
-  //   loading_indicator: true
-  // });
 
 
   const sampleTransaction = {
@@ -234,187 +245,187 @@ document.getElementById('transactionModal').addEventListener('click', (e) => {
     }
 });
 
-  // Configuration for withdraw and deposit
- const cryptoConfig = {
-  BTC: {
-      address: '1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa',
-      fee: 0.0005,
-      minDeposit: 0.001,
-      balance: 2.5432
-  },
-  ETH: {
-      address: '0x742d35Cc6634C0532925a3b844Bc454e4438f44e',
-      fee: 0.005,
-      minDeposit: 0.01,
-      balance: 15.32
-  },
-  USDT: {
-      address: 'TXsmCYRZoL4soJ6YgXe2hwu1f5jGb1knQj',
-      fee: 10,
-      minDeposit: 50,
-      balance: 5000
-  }
-};
+});
 
-let depositQR = null;
+document.addEventListener("DOMContentLoaded", () => {
+  // Configuration
+  const cryptoConfig = {
+      BTC: {
+          address: '1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa',
+          fee: 0.0005,
+          minDeposit: 0.001,
+          balance: 2.5432
+      },
+      ETH: {
+          address: '0x742d35Cc6634C0532925a3b844Bc454e4438f44e',
+          fee: 0.005,
+          minDeposit: 0.01,
+          balance: 15.32
+      },
+      USDT: {
+          address: 'TXsmCYRZoL4soJ6YgXe2hwu1f5jGb1knQj',
+          fee: 10,
+          minDeposit: 50,
+          balance: 5000
+      }
+  };
 
-// Initialize modals
-function initModals() {
-  // Deposit modal setup
-  document.getElementById('depositCurrency').addEventListener('change', updateDepositInfo);
-  document.getElementById('copyAddress').addEventListener('click', copyAddress);
-  
-  // Withdrawal modal setup
-  document.getElementById('withdrawCurrency').addEventListener('change', updateWithdrawInfo);
-  document.getElementById('maxAmount').addEventListener('click', setMaxAmount);
-  document.getElementById('withdrawAmount').addEventListener('input', calculateTotal);
-  document.getElementById('withdrawForm').addEventListener('submit', handleWithdrawSubmit);
-  
-  // Modal toggle buttons
-  document.querySelectorAll('#depositBtn, #withdrawBtn, .close-modal').forEach(btn => {
-      btn.addEventListener('click', toggleModal);
-  });
-  
-  // Click outside to close
-  document.querySelectorAll('#depositModal, #withdrawModal').forEach(modal => {
-      modal.addEventListener('click', e => {
-          if(e.target === modal) modal.classList.add('hidden');
+  let depositQR = null;
+
+  // Initialize modals
+  function initModals() {
+      // Deposit modal setup
+      document.getElementById('depositCurrency').addEventListener('change', updateDepositInfo);
+      document.getElementById('copyAddress').addEventListener('click', copyAddress);
+
+      // Withdrawal modal setup
+      document.getElementById('withdrawCurrency').addEventListener('change', updateWithdrawInfo);
+      document.getElementById('maxAmount').addEventListener('click', setMaxAmount);
+      document.getElementById('withdrawAmount').addEventListener('input', calculateTotal);
+      document.getElementById('withdrawForm').addEventListener('submit', handleWithdrawSubmit);
+
+      // Modal toggle buttons
+      document.querySelectorAll('#depositBtn, #withdrawBtn, .close-modal').forEach(btn => {
+          btn.addEventListener('click', toggleModal);
       });
-  });
-  
-  // Initial setup
-  updateDepositInfo();
-  updateWithdrawInfo();
-}
 
-// Modal toggle function
-function toggleModal(e) {
-  const btnId = e.target.id;
-  if(btnId === 'depositBtn') {
-      const modal = document.getElementById('depositModal');
-      modal.classList.toggle('hidden');
-      if(!modal.classList.contains('hidden')) {
-          updateDepositInfo();
+      // Click outside to close
+      document.querySelectorAll('#depositModal, #withdrawModal').forEach(modal => {
+          modal.addEventListener('click', e => {
+              if (e.target === modal) modal.classList.add('hidden');
+          });
+      });
+
+      // Initial setup
+      updateDepositInfo();
+      updateWithdrawInfo();
+  }
+
+  // Modal toggle function
+  function toggleModal(e) {
+      const btnId = e.target.id;
+      if (btnId === 'depositBtn') {
+          const modal = document.getElementById('depositModal');
+          modal.classList.toggle('hidden');
+          if (!modal.classList.contains('hidden')) {
+              updateDepositInfo();
+          }
+      } else if (btnId === 'withdrawBtn') {
+          const modal = document.getElementById('withdrawModal');
+          modal.classList.toggle('hidden');
+          if (!modal.classList.contains('hidden')) {
+              updateWithdrawInfo();
+          }
+      } else if (e.target.classList.contains('close-modal')) {
+          e.target.closest('[id$="Modal"]').classList.add('hidden');
       }
-  } else if(btnId === 'withdrawBtn') {
-      const modal = document.getElementById('withdrawModal');
-      modal.classList.toggle('hidden');
-      if(!modal.classList.contains('hidden')) {
-          updateWithdrawInfo();
+  }
+
+  // Deposit functions
+  function updateDepositInfo() {
+      const currency = document.getElementById('depositCurrency').value;
+      const config = cryptoConfig[currency];
+      const qrElement = document.getElementById('depositQr');
+
+      // Clear previous QR code
+      qrElement.innerHTML = '';
+      if (depositQR) {
+          depositQR.clear();
+          depositQR = null;
       }
-  } else if(e.target.classList.contains('close-modal')) {
-      e.target.closest('[id$="Modal"]').classList.add('hidden');
-  }
-}
 
-// Deposit functions
-function updateDepositInfo() {
-  const currency = document.getElementById('depositCurrency').value;
-  const config = cryptoConfig[currency];
-  const qrElement = document.getElementById('depositQr');
-  
-  // Clear previous QR code
-  qrElement.innerHTML = '';
-  if(depositQR) {
-      depositQR.clear();
-      depositQR = null;
-  }
+      // Create new QR code
+      depositQR = new QRCode(qrElement, {
+          text: config.address,
+          width: 128,
+          height: 128,
+          colorDark: "#000000",
+          colorLight: "#ffffff",
+          correctLevel: QRCode.CorrectLevel.H
+      });
 
-  // Create new QR code
-  depositQR = new QRCode(qrElement, {
-      text: config.address,
-      width: 128,
-      height: 128,
-      colorDark: "#000000",
-      colorLight: "#ffffff",
-      correctLevel: QRCode.CorrectLevel.H
-  });
-
-  // Update other elements
-  document.getElementById('depositAddress').value = config.address;
-  document.getElementById('depositCurrencyName').textContent = currency;
-  document.getElementById('depositCurrencySymbol').textContent = currency;
-  document.getElementById('minDeposit').textContent = config.minDeposit;
-}
-
-async function copyAddress() {
-  try {
-      const address = document.getElementById('depositAddress').value;
-      await navigator.clipboard.writeText(address);
-      const copyBtn = document.getElementById('copyAddress');
-      copyBtn.textContent = 'Copied!';
-      setTimeout(() => {
-          copyBtn.textContent = 'Copy';
-      }, 2000);
-  } catch (err) {
-      console.error('Failed to copy:', err);
-  }
-}
-
-// Withdrawal functions
-function updateWithdrawInfo() {
-  const currency = document.getElementById('withdrawCurrency').value;
-  const config = cryptoConfig[currency];
-  
-  document.getElementById('balanceCurrency').textContent = currency;
-  document.getElementById('availableBalance').textContent = config.balance.toFixed(4);
-  document.getElementById('networkFee').textContent = `${config.fee} ${currency}`;
-  calculateTotal();
-}
-
-function setMaxAmount() {
-  const currency = document.getElementById('withdrawCurrency').value;
-  const config = cryptoConfig[currency];
-  const maxAmount = Math.max(config.balance - config.fee, 0);
-  document.getElementById('withdrawAmount').value = maxAmount.toFixed(8);
-  calculateTotal();
-}
-
-function calculateTotal() {
-  const currency = document.getElementById('withdrawCurrency').value;
-  const config = cryptoConfig[currency];
-  const amount = parseFloat(document.getElementById('withdrawAmount').value) || 0;
-  const total = amount + config.fee;
-  document.getElementById('totalAmount').textContent = 
-      `${total.toFixed(8)} ${currency}`;
-}
-
-function handleWithdrawSubmit(e) {
-  e.preventDefault();
-  const currency = document.getElementById('withdrawCurrency').value;
-  const config = cryptoConfig[currency];
-  const amount = parseFloat(document.getElementById('withdrawAmount').value);
-  
-  if(!validateWithdrawal(amount, config)) return;
-
-  alert(`Withdrawal submitted: ${amount} ${currency}`);
-  document.getElementById('withdrawModal').classList.add('hidden');
-}
-
-function validateWithdrawal(amount, config) {
-  const address = document.getElementById('recipientAddress').value;
-  const confirmed = document.getElementById('confirmCheck').checked;
-  
-  if(!address || address.length < 10) {
-      alert('Please enter a valid wallet address');
-      return false;
+      // Update other elements
+      document.getElementById('depositAddress').value = config.address;
+      document.getElementById('depositCurrencyName').textContent = currency;
+      document.getElementById('depositCurrencySymbol').textContent = currency;
+      document.getElementById('minDeposit').textContent = config.minDeposit;
   }
 
-  if(!amount || amount <= 0 || (amount + config.fee) > config.balance) {
-      alert('Invalid amount');
-      return false;
+  async function copyAddress() {
+      try {
+          const address = document.getElementById('depositAddress').value;
+          await navigator.clipboard.writeText(address);
+          const copyBtn = document.getElementById('copyAddress');
+          copyBtn.textContent = 'Copied!';
+          setTimeout(() => {
+              copyBtn.textContent = 'Copy';
+          }, 2000);
+      } catch (err) {
+          console.error('Failed to copy:', err);
+      }
   }
 
-  if(!confirmed) {
-      alert('Please confirm the transaction details');
-      return false;
+  // Withdrawal functions
+  function updateWithdrawInfo() {
+      const currency = document.getElementById('withdrawCurrency').value;
+      const config = cryptoConfig[currency];
+
+      document.getElementById('balanceCurrency').textContent = currency;
+      document.getElementById('availableBalance').textContent = config.balance.toFixed(4);
+      document.getElementById('networkFee').textContent = `${config.fee} ${currency}`;
+      calculateTotal();
   }
 
-  return true;
-}
+  function setMaxAmount() {
+      const currency = document.getElementById('withdrawCurrency').value;
+      const config = cryptoConfig[currency];
+      const maxAmount = Math.max(config.balance - config.fee, 0);
+      document.getElementById('withdrawAmount').value = maxAmount.toFixed(8);
+      calculateTotal();
+  }
 
-// Initialize when page loads
-initModals();
+  function calculateTotal() {
+      const currency = document.getElementById('withdrawCurrency').value;
+      const config = cryptoConfig[currency];
+      const amount = parseFloat(document.getElementById('withdrawAmount').value) || 0;
+      const total = amount + config.fee;
+      document.getElementById('totalAmount').textContent = `${total.toFixed(8)} ${currency}`;
+  }
 
+  function handleWithdrawSubmit(e) {
+      e.preventDefault();
+      const currency = document.getElementById('withdrawCurrency').value;
+      const config = cryptoConfig[currency];
+      const amount = parseFloat(document.getElementById('withdrawAmount').value);
 
+      if (!validateWithdrawal(amount, config)) return;
+
+      alert(`Withdrawal submitted: ${amount} ${currency}`);
+      document.getElementById('withdrawModal').classList.add('hidden');
+  }
+
+  function validateWithdrawal(amount, config) {
+      const address = document.getElementById('recipientAddress').value;
+      const confirmed = document.getElementById('confirmCheck').checked;
+
+      if (!address || address.length < 10) {
+          alert('Please enter a valid wallet address');
+          return false;
+      }
+
+      if (!amount || amount <= 0 || (amount + config.fee) > config.balance) {
+          alert('Invalid amount');
+          return false;
+      }
+
+      if (!confirmed) {
+          alert('Please confirm the transaction details');
+          return false;
+      }
+
+      return true;
+  }
+
+  // Initialize when page loads
+  initModals();
 });

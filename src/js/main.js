@@ -429,3 +429,111 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize when page loads
   initModals();
 });
+
+
+  // Get elements
+  const editBtn = document.querySelector('.edit');
+  const cancelBtn = document.querySelector('.btn-cancel');
+  const saveBtn = document.querySelector('.btn-save');
+  const editPictureBtn = document.querySelector('.edit-picture');
+  const inputs = document.querySelectorAll('input');
+  const profilePic = document.querySelector('.profile-pic');
+  
+  // Store original values
+  let originalValues = {};
+
+  // Edit button click handler
+  editBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      toggleEditMode(true);
+  });
+
+  // Cancel button click handler
+  cancelBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      toggleEditMode(false);
+      restoreOriginalValues();
+  });
+
+  // Save button click handler
+  saveBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      toggleEditMode(false);
+      saveChanges();
+  });
+
+  // Profile picture edit handler
+  editPictureBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const fileInput = document.createElement('input');
+      fileInput.type = 'file';
+      fileInput.accept = 'image/*';
+      
+      fileInput.addEventListener('change', (e) => {
+          const file = e.target.files[0];
+          if (file) {
+              const reader = new FileReader();
+              reader.onload = (e) => {
+                  profilePic.src = e.target.result;
+              };
+              reader.readAsDataURL(file);
+          }
+      });
+      
+      fileInput.click();
+  });
+
+  function toggleEditMode(enable) {
+      inputs.forEach(input => {
+          input.disabled = !enable;
+          input.classList.toggle('focus:ring-slate-500', enable);
+          input.classList.toggle('bg-slate-100', !enable);
+          input.classList.toggle('dark:bg-slate-900', !enable);
+      });
+
+      saveBtn.disabled = !enable;
+      cancelBtn.disabled = !enable;
+      
+      if(enable) storeOriginalValues();
+  }
+
+  function storeOriginalValues() {
+      originalValues = {
+          fname: document.getElementById('fname').value,
+          lname: document.getElementById('lname').value,
+          dname: document.getElementById('dname').value,
+          username: document.getElementById('username').value,
+          email: document.getElementById('email').value,
+          phone: document.getElementById('phone').value,
+          city: document.getElementById('city').value,
+          country: document.getElementById('country').value
+      };
+  }
+
+  function restoreOriginalValues() {
+      for (const [id, value] of Object.entries(originalValues)) {
+          document.getElementById(id).value = value;
+      }
+  }
+
+  function saveChanges() {
+      // Here you would typically send data to server
+      const updatedData = {
+          firstName: document.getElementById('fname').value,
+          lastName: document.getElementById('lname').value,
+          displayName: document.getElementById('dname').value,
+          username: document.getElementById('username').value,
+          email: document.getElementById('email').value,
+          phone: document.getElementById('phone').value,
+          city: document.getElementById('city').value,
+          country: document.getElementById('country').value
+      };
+
+      console.log('Saving changes:', updatedData);
+      // Add actual API call here
+      alert('Profile updated successfully!');
+      storeOriginalValues(); // Update original values after save
+  }
+
+  // Initialize original values
+  storeOriginalValues();

@@ -2081,6 +2081,10 @@ input[type="number"] {
   padding-bottom: 1.25rem;
 }
 
+.pr-2{
+  padding-right: 0.5rem;
+}
+
 .text-left{
   text-align: left;
 }
@@ -2141,6 +2145,10 @@ input[type="number"] {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-\[\.6rem\]{
+  font-size: .6rem;
 }
 
 .font-bold{
@@ -3011,6 +3019,14 @@ input[type="number"] {
 
   .lg\:w-full{
     width: 100%;
+  }
+
+  .lg\:w-\[40\%\]{
+    width: 40%;
+  }
+
+  .lg\:w-\[60\%\]{
+    width: 60%;
   }
 
   .lg\:max-w-full{

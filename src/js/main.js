@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+   // Get current year (Footer)
+   const yearElement = document.getElementById("year");
+   if (yearElement) {
+     const currentYear = new Date().getFullYear();
+     yearElement.textContent = currentYear;
+   }
+ 
   // Dark mode - Light mode
   const themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
   const themeToggleLightIcon = document.getElementById("theme-toggle-light-icon");
@@ -88,6 +96,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 dropdownMenu.classList.add('hidden');
             });
         });
+
+ 
+
   // Form Elements
   const form = document.getElementById("register-form");
   const submitButton = document.getElementById("submit-button");
@@ -153,12 +164,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Get current year (Footer)
-  const yearElement = document.getElementById("year");
-  if (yearElement) {
-    const currentYear = new Date().getFullYear();
-    yearElement.textContent = currentYear;
-  }
 });
 document.addEventListener("DOMContentLoaded", () => {
   // Password and Confirm Password Fields (Works for both pages)
